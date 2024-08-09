@@ -1,4 +1,4 @@
-# README
+# Docker refresher
 
 ## Starting containers manually
 
@@ -29,7 +29,7 @@ docker run -d \
 mongo-express
 ```
 
-## docker-compose
+## Using `docker-compose`
 
 To launch the `mongo` and the `mongo-express` containers in a network using `docker-compose`, run:
 
