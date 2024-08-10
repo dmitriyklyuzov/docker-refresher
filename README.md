@@ -58,6 +58,25 @@ Remove the image
 docker rm $(docker ps -aqf "name=my-app") && docker rmi $(docker images my-app -q)
 ```
 
+## Pushing the image to ECR
+
+```bash
+docker tag my-app:1.0 my-app:latest
+```
+
+Click "View push commands" in ECR and (after logging in) tag the existing local image version (like 1.0) with the ECR repo name. This will create a copy of `my-app:1.0` as `<awsprefix>/my-app:latest`.
+
+```bash
+docker tag my-app:latest 111111111111.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+```
+
+Execute the push command (we must prepend the aws prefix, otherwise, Docker will think we're pushing to the Dicker repository):
+
+```bash
+docker push 111111111111.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+```
+
+
 ## Resources
 
 - https://youtu.be/3c-iBn73dDE
