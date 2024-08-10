@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   my-app:
-    image: 110587347433.dkr.ecr.us-east-1.amazonaws.com/my-app:1.2
+    image: 110587347433.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
     ports:
       - 3000:3000
     depends_on:
