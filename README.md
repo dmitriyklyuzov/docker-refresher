@@ -73,7 +73,7 @@ docker tag my-app:latest 111111111111.dkr.ecr.us-east-1.amazonaws.com/my-app:lat
 Execute the push command (we must prepend the aws prefix, otherwise, Docker will think we're pushing to the Dicker repository):
 
 ```bash
-docker push 111111111111.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+docker push 111111111111.dkr.ecr.us-east-1.amazonaws.com/my-app --all-tags
 ```
 
 
