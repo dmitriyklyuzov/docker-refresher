@@ -3,13 +3,15 @@
 ## Starting containers manually
 
 ### create docker network
+
 ```bash
 docker network create mongo-network
 ```
 
 ### start mongodb
+
 ```bash
-docker run -d \                         
+docker run -d \
 -p 27017:27017 \
 --network mongo-network \
 --name mongo \
@@ -19,6 +21,7 @@ mongo
 ```
 
 ### start mongo-express
+
 ```bash
 docker run -d \
 -p 8081:8081 \
@@ -35,6 +38,24 @@ To launch the `mongo` and the `mongo-express` containers in a network using `doc
 
 ```bash
 docker-compose -f mongo.yaml up -d
+```
+
+## Building using `Dockerfile`
+
+```bash
+docker build -t my-app:1.0 --no-cache .
+```
+
+Use the newly-built image
+
+```bash
+docker run --name my-app -p 3000:3000 my-app:1.0
+```
+
+Remove the image
+
+```bash
+docker rm $(docker ps -aqf "name=my-app") && docker rmi $(docker images my-app -q)
 ```
 
 ## Resources
