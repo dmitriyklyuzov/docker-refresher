@@ -76,7 +76,6 @@ Execute the push command (we must prepend the aws prefix, otherwise, Docker will
 docker push 111111111111.dkr.ecr.us-east-1.amazonaws.com/my-app --all-tags
 ```
 
-
 ## Resources
 
 - https://youtu.be/3c-iBn73dDE
