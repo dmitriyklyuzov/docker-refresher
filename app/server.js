@@ -6,7 +6,7 @@ const hostname = '0.0.0.0';
 const port = 3000;
 
 // Mongo params
-const mongoUri = "mongodb://mongoadmin:password@localhost:27017";
+const mongoUri = "mongodb://mongoadmin:password@mongo";
 const databaseName = "my-db";
 
 const server = createServer(async (req, res) => {
