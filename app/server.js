@@ -6,7 +6,10 @@ const hostname = '0.0.0.0';
 const port = 3000;
 
 // Mongo params
-const mongoUri = "mongodb://mongoadmin:password@mongo";
+const db_username = process.env.MONGO_DB_USERNAME;
+const db_password = process.env.MONGO_DB_PASSWORD;
+const db_hostname = process.env.MONGO_DB_HOSTNAME || 'localhost:27017';
+const mongoUri = `mongodb://${db_username}:${db_password}@${db_hostname}`;
 
 const server = createServer(async (req, res) => {
   
